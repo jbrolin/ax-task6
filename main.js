@@ -2,8 +2,9 @@
 
 
 const run6 = () => {
-
-  const maxVal=50;
+   let t1=performance.now();
+  
+  const maxVal=500;
   let numberList= {};
   for (i=2; i<=maxVal; i++) {
     // mark all divisible by 2 to false except 2
@@ -21,11 +22,12 @@ const run6 = () => {
       for (c=v+1; c<=maxVal; c++) {
        
         cVal=c/v;
-        if (Number.isInteger(cVal) && (Math.sqrt(i)<=i) && numberList!==true) {
+        if (Number.isInteger(cVal)) {
          numberList[c]=false;
         }
       }
     } 
+
   }
  
   const result=[]
@@ -37,5 +39,6 @@ const run6 = () => {
 
     console.log(result);
     document.getElementById("outputResult").innerHTML = result;
-
+    let t2=performance.now();
+    console.log(t2-t1);
 }
